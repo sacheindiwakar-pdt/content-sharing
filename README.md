@@ -3,6 +3,13 @@ FAILED tests/test_reference_data.py::test_admission_types - assert (404 == 200)
 FAILED tests/test_reference_data.py::test_discharge_dispositions - assert (404 == 200)
 FAILED tests/test_reference_data.py::test_admission_sources - assert (404 == 200)
 
+/openapi.json
+/docs
+/docs/oauth2-redirect
+/redoc
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AttributeError: '_IncludedRouter' object has no attribute 'path'
 # Healthcare Patient Management System
 
 [![Python Version](https://img.shields.io/badge/Python-3.11%20%7C%203.12%20%7C%203.13-blue.svg)](https://www.python.org/)
