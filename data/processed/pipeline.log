@@ -1,0 +1,105 @@
+
+--- Extract ---
+Extracted 101,766 rows and 50 columns
+   encounter_id  patient_nbr             race  ... change diabetesMed readmitted
+0       2278392      8222157        Caucasian  ...     No          No         NO
+1        149190     55629189        Caucasian  ...     Ch         Yes        >30
+2         64410     86047875  AfricanAmerican  ...     No         Yes         NO
+3        500364     82442376        Caucasian  ...     Ch         Yes         NO
+4         16680     42519267        Caucasian  ...     Ch         Yes         NO
+
+[5 rows x 50 columns]
+(101766, 50)
+
+
+--- Validate ---
+Extracted 101,766 rows and 50 columns
+
+--- VALIDATION REPORT ---
+Rows checked: 101,766
+Columns checked: 50
+Errors: 0
+Warnings: 1
+WARNING: 9 columns contain missing values.
+
+Validation PASSED.
+
+
+--- Clean ---
+
+--- CLEANING REPORT ---
+Source rows: 101,766
+Cleaned rows: 101,766
+Cleaned columns: 47
+Unique patients: 71,518
+Excluded columns: ['weight', 'max_glu_serum', 'A1Cresult']
+Remaining missing values: {}
+
+Saved: D:\Hospital Management System\data\processed\cleaned_encounters.csv
+Audit report: D:\Hospital Management System\data\processed\cleaning_report.json
+
+
+--- Transform ---
+
+--- TRANSFORMATION REPORT ---
+Source encounters: 101,766
+Transformed encounters: 101,766
+Unique patients: 71,518
+Diagnosis rows: 305,298
+Medication rows: 2,340,618
+Reference mapping checks: {'admission_type_id': {'distinct_source_ids': 8, 'unmapped_ids': []}, 'discharge_disposition_id': {'distinct_source_ids': 26, 'unmapped_ids': []}, 'admission_source_id': {'distinct_source_ids': 17, 'unmapped_ids': []}}
+
+Saved transformed files to: D:\Hospital Management System\data\processed
+
+
+--- Test transformed data ---
+PASS: Encounter count is correct
+PASS: Encounter IDs are unique
+PASS: Patient IDs are unique
+PASS: Patient count is correct
+PASS: Every encounter belongs to a known patient
+PASS: Diagnosis records reference valid encounters
+PASS: Medication records reference valid encounters
+PASS: Diagnosis row count is correct
+PASS: Medication row count is correct
+PASS: admission_types.csv: IDs are unique
+PASS: admission_types.csv: descriptions are not blank
+PASS: discharge_dispositions.csv: IDs are unique
+PASS: discharge_dispositions.csv: descriptions are not blank
+PASS: admission_sources.csv: IDs are unique
+PASS: admission_sources.csv: descriptions are not blank
+
+All transformation tests passed.
+
+
+--- Load into MySQL ---
+Loaded 71,518 rows into patients
+Loaded 8 rows into admission_types
+Loaded 30 rows into discharge_dispositions
+Loaded 25 rows into admission_sources
+Loaded 101,766 rows into encounters
+Loaded 305,298 rows into encounter_diagnoses
+Loaded 2,340,618 rows into encounter_medications
+
+Database loading completed.
+
+
+--- Verify database ---
+
+--- DATABASE VERIFICATION ---
+PASS: patients: database=71,518, CSV=71,518
+PASS: encounters: database=101,766, CSV=101,766
+PASS: encounter_diagnoses: database=305,298, CSV=305,298
+PASS: encounter_medications: database=2,340,618, CSV=2,340,618
+PASS: admission_types: database=8, CSV=8
+PASS: discharge_dispositions: database=30, CSV=30
+PASS: admission_sources: database=25, CSV=25
+PASS: encounters_without_patients = 0
+PASS: diagnoses_without_encounters = 0
+PASS: medications_without_encounters = 0
+PASS: invalid_admission_types = 0
+PASS: invalid_discharge_dispositions = 0
+PASS: invalid_admission_sources = 0
+
+All database verification checks passed.
+

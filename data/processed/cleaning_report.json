@@ -1,0 +1,14 @@
+{
+    "source_rows": 101766,
+    "cleaned_rows": 101766,
+    "source_columns": 0,
+    "cleaned_columns": 47,
+    "excluded_columns": [
+        "weight",
+        "max_glu_serum",
+        "A1Cresult"
+    ],
+    "missing_values_remaining": {},
+    "duplicate_encounter_ids": 0,
+    "unique_patients": 71518
+}

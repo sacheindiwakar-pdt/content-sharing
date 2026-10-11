@@ -1,0 +1,28 @@
+.block-container {
+    max-width: 1500px;
+    padding-top: 1.8rem;
+    padding-bottom: 2rem;
+}
+
+[data-testid="stSidebar"] {
+    border-right: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+[data-testid="stMetric"] {
+    background: var(--secondary-background-color);
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 12px;
+    padding: 18px;
+}
+
+[data-testid="stMetricLabel"] {
+    font-size: 0.9rem;
+}
+
+h1, h2, h3 {
+    letter-spacing: -0.4px;
+}
+
+div[data-testid="stPlotlyChart"] {
+    border-radius: 12px;
+}

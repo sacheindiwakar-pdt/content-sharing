@@ -1,0 +1,57 @@
+{
+    "started_at": "2026-10-10T17:14:54.133726+00:00",
+    "status": "SUCCESS",
+    "stages": [
+        {
+            "stage": "Extract",
+            "script": "extract.py",
+            "status": "SUCCESS",
+            "return_code": 0,
+            "duration_seconds": 2.4
+        },
+        {
+            "stage": "Validate",
+            "script": "validate.py",
+            "status": "SUCCESS",
+            "return_code": 0,
+            "duration_seconds": 1.64
+        },
+        {
+            "stage": "Clean",
+            "script": "clean.py",
+            "status": "SUCCESS",
+            "return_code": 0,
+            "duration_seconds": 2.66
+        },
+        {
+            "stage": "Transform",
+            "script": "transform.py",
+            "status": "SUCCESS",
+            "return_code": 0,
+            "duration_seconds": 3.7
+        },
+        {
+            "stage": "Test transformed data",
+            "script": "test_transform.py",
+            "status": "SUCCESS",
+            "return_code": 0,
+            "duration_seconds": 2.14
+        },
+        {
+            "stage": "Load into MySQL",
+            "script": "load.py",
+            "status": "SUCCESS",
+            "return_code": 0,
+            "duration_seconds": 92.44
+        },
+        {
+            "stage": "Verify database",
+            "script": "verify_database.py",
+            "status": "SUCCESS",
+            "return_code": 0,
+            "duration_seconds": 6.95
+        }
+    ],
+    "finished_at": "2026-10-10T17:16:46.082792+00:00",
+    "total_duration_seconds": 111.93
+}

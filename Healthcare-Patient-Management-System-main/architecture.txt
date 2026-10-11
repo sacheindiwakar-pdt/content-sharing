@@ -1,0 +1,133 @@
+1. Overall architecture
+Healthcare Dataset
+Patients · Encounters · Diagnoses · Medications
+
+Module 1 — Data Engineering
+Extract → Validate → Transform → Load
+Implemented
+
+MySQL Database
+Structured healthcare tables and relationships
+
+Module 2 — FastAPI Backend
+Patients · Encounters · Diagnoses · Medications · Reference data
+Implemented
+
+Module 3 — Analytics
+Hospital metrics, readmissions, length of stay, diagnosis trends
+
+
+Security Layer
+Authentication, authorization, access control
+
+
+
+Module 4 — React Frontend
+Patient search · Encounter details · Analytics dashboard
+
+Module 5 — Testing, Deployment and Monitoring
+Integration tests · Logging · Configuration · Deployment
+
+
+This is the proposed target architecture. Some parts are already implemented; the remaining components will be developed incrementally.
+
+
+2. Define each module's responsibility
+Implementation status reflects our progress in this conversation.
+
+Module 1 — Data Engineering (ETL)
+Implemented
+- Extract healthcare records from the source dataset.
+- Validate schemas, missing values and data quality.
+- Transform records into structured relational tables.
+- Load the data into MySQL.
+Existing deliverables: extraction, validation, transformation and loading scripts.
+
+
+
+
+Module 2 — Backend API
+Core implementation working
+- Expose patient, encounter, diagnosis and medication records.
+- Provide reference data and pagination.
+- Validate requests and serialize responses using Pydantic.
+- Test endpoints and database configuration.
+Technology: FastAPI, Python, MySQL Connector and Pydantic.
+
+
+
+
+Module 3 — Healthcare Analytics
+Next major module
+- Calculate total patients and encounters.
+- Analyze readmission categories.
+- Calculate hospital length-of-stay statistics.
+- Summarize admission types, diagnoses and medication records.
+- Expose analytics through the existing FastAPI application.
+Technology: SQL aggregations, Python and FastAPI.
+
+
+
+
+Module 4 — Frontend Application
+- Patient search and patient details.
+- Encounter history, diagnoses and medications.
+- Analytics dashboard with charts and KPIs.
+- Loading, empty, error and pagination states.
+- Connect all views to the existing API.
+Technology: React, JavaScript, CSS, Axios and a charting library.
+
+
+
+
+Module 5 — Security and Access Control
+- Login and authentication.
+- Role-based permissions for different user types.
+- Protected API endpoints and frontend routes.
+- Secure secret management and access logging.
+Authentication must be enforced by the backend, not merely by hiding frontend pages.
+
+
+
+
+Module 6 — Integration and Deployment
+- End-to-end tests across frontend, API and database.
+- Standardized error responses and operational logging.
+- Environment-specific configuration.
+- Deployment using Docker and an appropriate hosting environment.
+- Documentation and final verification.
+The automated tests already started in Module 2 remain part of this final integration stage.
+
+
+
+3. Recommended project folder structure
+
+D:\Hospital Management System\
+│
+├── Module 1\
+│   └── ETL scripts and data validation
+│
+├── Module 2\
+│   ├── app\
+│   │   ├── main.py
+│   │   ├── database.py
+│   │   ├── schemas.py
+│   │   └── routes\
+│   ├── tests\
+│   ├── .env
+│   ├── .gitignore
+│   └── requirements.txt
+│
+├── Module 3\
+│   └── Healthcare analytics
+│
+├── Module 4\
+│   └── React frontend
+│
+├── Module 5\
+│   └── Authentication and access control
+│
+└── README.md
+
+
+The exact organization may evolve when we implement the modules. For now, keep Module 1 and Module 2 intact.

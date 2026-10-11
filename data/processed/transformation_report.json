@@ -1,0 +1,35 @@
+{
+    "source_encounters": 101766,
+    "transformed_encounters": 101766,
+    "unique_patients": 71518,
+    "diagnosis_rows": 305298,
+    "medication_rows": 2340618,
+    "restored_columns": [
+        "weight",
+        "max_glu_serum",
+        "A1Cresult"
+    ],
+    "patient_attribute_conflicts": {
+        "race": 249,
+        "gender": 3
+    },
+    "reference_mapping_checks": {
+        "admission_type_id": {
+            "distinct_source_ids": 8,
+            "unmapped_ids": []
+        },
+        "discharge_disposition_id": {
+            "distinct_source_ids": 26,
+            "unmapped_ids": []
+        },
+        "admission_source_id": {
+            "distinct_source_ids": 17,
+            "unmapped_ids": []
+        }
+    },
+    "reference_row_counts": {
+        "admission_types": 8,
+        "discharge_dispositions": 30,
+        "admission_sources": 25
+    }
+}
